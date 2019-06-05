@@ -29,6 +29,7 @@ html = requests.get('http://www.cntour.cn/')
 soup = BeautifulSoup(html.text, 'lxml')
 data = soup.select('#main > div > div.mtop.firstMod.clearfix > div.leftBox > div:nth-child(2) > ul > li> a')
 pt = '[0-9]{1,}'
+print(data)
 for item in data:
     result = {
         'title': item.get_text(),
